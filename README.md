@@ -1,5 +1,5 @@
 # Resumos  
-https://www.google.com.br/search?q=engenharia+de+software&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjl7d2B3qjNAhWEmx4KHbJpCq4Q_AUICSgC&biw=1280&bih=619#tbm=isch&q=redmine&imgdii=IRnjULtyFUFteM%3A%3BIRnjULtyFUFteM%3A%3BOAW1-Gk1o9FGGM%3A&imgrc=IRnjULtyFUFteM%3A  
+http://www.iborgelt.com/wp-content/uploads/2011/12/redmine.png
 
 1.0 Redmine  
 1.1 definição  
