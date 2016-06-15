@@ -1,0 +1,40 @@
+Introdução GIT:
+Basicamente é um versionador de arquivos, é utilizado principalmente para gerenciar versões de softwares desenvolvidos por um ou mais desenvolvedores, com ele podemos implementar novas fucionalidades e tudo é registrado em um histórico, o qual podemos retroceder sempre que necessário, os integrantes de um projeto podem enviar correções, atualizações, etc. As alterações enviadas para o projeto principal não comprometem o mesmo pois cabe ao dono do projeto a inclusão ou não das alterações efetuadas.
+
+Repository: 
+Local onde fica todos os arquivos doprojeto, inclusive os históricos e versões.Commit: Colecão de alteracões realizadas, é comose fosse um “checkpoint” do seu projeto, sempreque necessário vc pode retroceder ate algumcommit.
+
+Commit: Colecão de alteracões realizadas, é comose fosse um “checkpoint” do seu projeto, sempreque necessário vc pode retroceder ate algumcommit.
+
+TermosBranch: É uma ramificacão do seu projeto, cada branchrepresenta uma versão do seu projeto, e podemos seguiruma linha de desenvolvimento a partir de cada branch.
+Fork: Basicamente é uma bifurcação, uma cópia de umprojeto existente para seguir em uma nova direção.
+Merge: É a capacidade de incorporar alterações do git,onde acontece uma junção dos branchs.
+Pull: Obter código de outro repositório [remoto], fazendo merge com o seu repositório atual. 
+Push: Enviar seu código atual para outro repositório [remoto].
+Autenticação e Autenticidade:  O servidor GIT restringe o acesso aos repositórios;  A autenticação é feita por meio de par de chaves [SSH] ou usuário e senha [HTTPs];  O Github, por exemplo, permite esses 2 tipos de autenticação. – SSH: indicado para computadores não públicos (suas chaves ficam ligadas a ele) – HTTP: pode ser utilizado em qualquer computador, sem prévias configurações
+O git é inteligente o suficiente para apenasrealizar commits se detectar alguma alteraçãonos arquivos que foram indicados pelo (git add),dessa forma o único commit que ele realiza semalguma alteração é o primeiro.
+ “Nosso primeiro commit”Passamos o parâmetro -a para informar quetodos os arquivos alterados devem serincluidos do commit.Passamos o paramêtro -m para adicionar umamensagem explicativa para o commit.
+
+Depois que fizemos nosso primeiro commit existem alguns comandosque podemos utilizar para verificar o mesmo, são eles:git log // listar todos os commits já realizados.git status // mostrar os arquivos alterados desde oúltimo commit.git show // mostrar as alterações realizadas noúltimo commit.
+
+
+Todo novo repositorio git tem um branch defaultchamado “master”.Para listar todos nossos branchs:git branchSe vc não tiver mais branchs a saida será:*master.
+
+Vamos criar um novo branch chamado “working” pegando comobase o branch corrente e vamos continuar no branch corrente:git branch workingAgora vamos criar um novo branch chamado“outro” como base o branch “working” e vamosnos manter no branch corrente:git branch outro working
+
+Branchs:
+
+Como já vimos, nosso repositório ja tem por default obranch “master” dessa forma quando falamos “branchcorrente” nos referimos ao branch que estamostrabalhando no momento. Se não criamos nenhumentão estaremos trabalhando no master.
+
+Para criar um novo branch e automaticamentesairmos do branch corrente e irmos para o novo branch usamos o “checkout”:git checkout -b “outro”Por hora devemos ter os seguintes branchs:master*outro o branch sinalizado com “*” é o branch corrente.
+
+Mudando de branch corrente:git checkout master Agora a saida fica assim:*masteroutroPara deletarmos um branch fazemos dessa maneira:branch -d outro
+Não podemos deletar um branchcorrente, primeiro temos que mudar paraoutro branch e depois deletarmos o quedesejamos.
+
+ Exemplificando MergeDigamos que o arquivo exemplo.txt foi alterado nobranch “outro”.git checkout outro // alterando para o branch outro.git add . // indicamos todos os arquivos do commit.git commit -a -m “alteração exemplo.txt” // commit.
+
+ Agora queremos que nossa alteração no exemplo.txtseja refletida a nossa branch master.Primeiro vamos para o branch que queremos asalterações refletidas:git checkout masterAgora realizamos o merge (mesclagem/fusão) dasalterações do branch outro para o current branch:git merge outro
+
+Não precisamos passar o branch master como parâmetro poisjá estamos nele através do:git checkout masterLembram?A saida deverá ser algo como isto:Updating 642caa9..851gb82Fast forwardexemplo.txt | 1 +1 files changed, 1 insertions(+), 0 deletions(-)
+
+ Confirmando a alteração no arquivo:cat exemplo.txtNesse momento toda a alteração realizada nobranch “outro” sera refletida no branch masterinclusive nossos commits que fizemos no branchoutro e agora esta no master.
