@@ -1,5 +1,4 @@
 # Resumos  
-http://www.iborgelt.com/wp-content/uploads/2011/12/redmine.png
 
 1.0 Redmine  
 1.1 definição  
